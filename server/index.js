@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import postRoutes from "./routes/posts.js";
-// import userRouter from "./routes/user.js";
+import userRouter from "./routes/user.js";
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("API");
 });
 app.use("/posts", postRoutes);
-// app.use("/user", userRouter);
+app.use("/user", userRouter);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT;
