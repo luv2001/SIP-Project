@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import postRoutes from "./routes/posts.js";
+// import userRouter from "./routes/user.js";
 
 const app = express();
 
@@ -18,10 +19,9 @@ app.get("/", (req, res) => {
   res.send("API");
 });
 app.use("/posts", postRoutes);
+// app.use("/user", userRouter);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
-// const CONNECTION_URL =
-//   "mongodb+srv://dbsip:dbsip@cluster0.nl0yi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const PORT = process.env.PORT;
 
 mongoose
